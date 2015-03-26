@@ -2,8 +2,8 @@ jQuery Sticky Plug-in
 =====================
 
 This plug-in allow to turn any HTML element into a sticky element.
-A sticky element is an element that scroll with the rest of the page and stay
-sticked to the top of the window when it reaches it.
+A sticky element is an element that scrolls with the rest of the page and stays
+stuck to the top of the window when it reaches it.
 
 
 API
