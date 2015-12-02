@@ -59,6 +59,9 @@
     this.top      = element.offset().top;
     this.offset   = (params && parseInt(params.offset, 10)) || 0;
     this.position = element.css('position');
+    this.activate = (params && typeof params.activate === 'function') ?
+                    params.activate                                   :
+                    function () { return true; };
 
     var fn = $.proxy(this.chkstick, this);
 
@@ -115,6 +118,11 @@
     },
 
     chkstick : function () {
+      if (!this.activate()) {
+        this.unstick();
+        return;
+      }
+
       var pos = WIN.scrollTop();
 
       if (pos + this.offset >= this.top) {
@@ -158,7 +166,12 @@
     // turns sticky. A positive value indicates that the element become sticky
     // before it reaches the top of the page, a negative value indicates that
     // the element become sticky after it reaches the top of the page.
-    offset : 0
+    offset  : 0,
+
+    // A function that return true or false
+    // When testing if the element must be sticky, if that function return
+    // false, the element won't be sticky; if true it is allowed to be sticky
+    activate: null,
   };
 
   // Default class name use by the plug-in

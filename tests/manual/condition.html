@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<title>Basic test - Sticky plug-in</title>
+
+<script src="//code.jquery.com/jquery-1.9.0.js"></script>
+<script src="../../ca.jquery.sticky.js"></script>
+
+<script>
+$(function () {
+  $('.stickMe').sticky();
+
+  $('.stickMe2').sticky({
+    offset   : $('.stickMe').outerHeight(),
+    activate : function () {
+      return window.matchMedia('(min-width:600px)').matches;
+    }
+  });
+});
+</script>
+
+<style>
+body {
+  font    : 1em sans-serif;
+  padding : 0;
+  margin  : 0;
+}
+
+#page {
+  width   : 30em;
+  margin  : 10em auto;
+  padding : 1em;
+  border  : 1px solid black;
+}
+
+.stickMe {
+  background: #CCC;
+  padding   : .5em;
+}
+
+.stickMe2 {
+  background: #FCC;
+}
+</style>
+
+<div id="page">
+  <p class="stickMe">I should stick on top of the window</p>
+
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In non magna nec augue vulputate imperdiet eu vitae velit. Fusce accumsan arcu id magna volutpat cursus. Ut iaculis dui tortor, nec rutrum quam faucibus ut. Phasellus molestie vel ante vel porttitor. Cras ornare massa fringilla condimentum convallis. Morbi porta ut velit sit amet gravida. Mauris et diam nibh. Ut sit amet eros ac ante tempor accumsan. Sed felis tellus, mollis ac neque vitae, ullamcorper fermentum mauris. Cras vestibulum sem vel augue fermentum, id tincidunt tellus faucibus. Integer elementum ante diam, vel vehicula odio feugiat ut. Duis commodo enim vitae leo rhoncus, sit amet convallis purus posuere. Nulla id lorem sed arcu euismod congue non nec turpis. Donec facilisis metus elit, sed imperdiet neque sagittis quis. Suspendisse at justo mauris.</p>
+
+  <p>Mauris sed libero nec libero interdum blandit. Sed non turpis rutrum, luctus nisi sit amet, hendrerit ligula. Nulla semper eleifend diam, at pellentesque ipsum pulvinar vel. Ut eget arcu ullamcorper dolor vehicula blandit sit amet sed diam. Fusce rhoncus lacus quis purus facilisis, et aliquet augue sodales. Quisque vestibulum mi lacus. Duis et luctus ipsum. Integer eu magna ac quam fermentum sollicitudin eget et massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce condimentum eget erat quis pellentesque.</p>
+
+  <p class="stickMe2">I should stick right under the other sticky element</p>
+
+  <p>Sed sit amet velit tincidunt, blandit est eu, aliquam tortor. Mauris non sapien mollis, euismod lacus eu, hendrerit lacus. Nunc ut quam eros. Morbi vestibulum at lacus non bibendum. Nam sed diam consectetur dolor mollis porttitor. In sed nibh ipsum. Nunc eleifend nibh et metus luctus, vitae eleifend ante fringilla. Aliquam nisl est, viverra eu nulla sed, vulputate interdum quam. Maecenas ante mauris, porttitor dapibus scelerisque nec, fermentum vitae libero. Maecenas molestie tristique ligula eu tincidunt. Donec sem tortor, ultrices egestas enim id, fermentum consectetur dolor. Vestibulum at sagittis neque, quis fringilla nunc. Aenean dictum nisi varius feugiat suscipit. Cras est diam, pulvinar eget magna vitae, fermentum aliquam metus. Suspendisse in quam vestibulum, tempor eros vitae, varius massa.</p>
+
+  <p>Cras accumsan neque nec turpis venenatis, ut condimentum libero adipiscing. Duis tincidunt nibh nisi, nec commodo sem iaculis in. Ut dignissim mauris euismod turpis tempus, ac faucibus orci vestibulum. Donec rhoncus eros non varius egestas. Nunc semper sit amet arcu in cursus. Quisque ut nulla ultricies, convallis velit sit amet, congue nisi. Aliquam non purus id lorem tincidunt sagittis ac sit amet lorem. Nunc pellentesque, magna ac lobortis tempus, enim ligula suscipit nulla, sed viverra ante arcu vehicula sem. Curabitur in ullamcorper felis, et rutrum mi. Donec pretium diam at faucibus auctor. Vivamus aliquam augue iaculis massa fringilla consectetur id eget odio. Phasellus tincidunt pellentesque tincidunt. Sed ultrices, diam eget sodales mattis, nisi nisl adipiscing sem, ac facilisis diam ligula id sem. Duis ut nisl rutrum, interdum erat quis, interdum nibh. Curabitur consequat, turpis eu lobortis sollicitudin, libero nisi volutpat velit, ut dapibus erat quam id augue.</p>
+
+  <p>Integer dignissim felis at tincidunt venenatis. Vestibulum eget augue mauris. Fusce est nisi, ultricies vel augue non, feugiat congue justo. In hac habitasse platea dictumst. Ut leo metus, consequat vel faucibus in, consectetur nec diam. Donec vulputate mauris arcu, a adipiscing massa ullamcorper in. Donec quis ultrices magna, feugiat pharetra nulla. In interdum nibh massa, quis faucibus quam ultricies eget. Proin iaculis vitae nisi eu gravida. Nullam purus elit, accumsan vel purus nec, luctus rhoncus urna.</p>
+</div>
